@@ -1,0 +1,103 @@
+@keyframes popUp {
+    from {
+        transform: translateY(50px); /* Start from off-screen (right) */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1;
+    }
+}
+
+.section {
+    margin-top: 15px; /* Adjust this based on your navbar's height */
+    padding: 20px;
+}
+
+.section__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ID Card Container */
+.id-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    animation: popUp 0.5s ease-out;
+}
+
+/* ID Card Details Section */
+.id-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.id-details h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: left;
+}
+
+.pic {
+    width: 170px;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+.id-card {
+    transition: transform 0.3s ease;
+}
+
+.id-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    .section__container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .id-card {
+        width: 90%; /* Make cards take up more width on smaller screens */
+    }
+}
+
+/* Media Query for Mobile Phones */
+@media (max-width: 480px) {
+    .id-card {
+        width: 100%; /* Full width for cards on very small screens */
+        margin: 10px 0; /* Reduce margin to fit cards better */
+    }
+
+    .pic {
+        width: 100%; /* Full width for images */
+    }
+}

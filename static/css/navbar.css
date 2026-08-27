@@ -1,0 +1,152 @@
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 99;
+    background-color: transparent;
+}
+  
+.nav__content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(255, 88, 88);
+    transition: 0.3s;
+}
+
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+  
+nav .checkbox {
+    display: none;
+}
+  
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: rgb(255, 88, 88);
+    cursor: pointer;
+}
+  
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+    text-align: center;
+}
+  
+ul li a {
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+    text-align: center;
+}
+  
+ul li a:hover {
+    border-top-color: rgb(255, 88, 88);
+    border-bottom-color: rgb(255, 88, 88);
+    color: rgb(255, 88, 88);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 12px 16px;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+/* Hover effect for links in the dropdown */
+.dropdown-content a:hover {
+    background-color: transparent;
+}
+  
+/* Add some padding to the dropdown */
+.nav__content ul li {
+    position: relative;
+}
+  
+@media (width < 750px) {
+    nav .checkbox {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: rgba(255, 255, 255, 0.8);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        overflow-y: auto; /* Enables vertical scrolling */
+        max-height: calc(100vh - 85px);
+    }
+
+    nav #check:checked ~ ul {
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.25rem;
+    }
+
+    /* Ensure dropdown width matches the main menu width */
+    .dropdown-content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 130%; /* Full width of the parent container */
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .section__container {
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,67 @@
+@keyframes popUp {
+    from {
+        transform: translateY(50px); /* Start from off-screen */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1;
+    }
+}
+
+/* ID Card Container */
+.id-card {
+    display: flex;
+    flex-direction: column; /* Change to column for vertical stacking */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    animation: popUp 0.5s ease-out;
+    margin-top: 80px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.id-details {
+    text-align: center; /* Center text and content */
+}
+
+.id-details h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.id-details p {
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+}
+
+.id-details strong{
+    color: rgb(255, 88, 88);
+}
+
+/* Image styling */
+.song-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Audio Player styling */
+.audio-player {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
